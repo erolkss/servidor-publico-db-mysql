@@ -40,7 +40,7 @@ public class ServidorpublicoApplicationRunner implements CommandLineRunner {
             );
 
         } else {
-            System.out.println("Arquivo JSON Vazio");
+            System.out.println("Sem Registros");
         }
     }
 
@@ -60,6 +60,7 @@ public class ServidorpublicoApplicationRunner implements CommandLineRunner {
 
     }
 
+    @PostConstruct
     public void save() {
         long matricula = Long.parseLong(JOptionPane.showInputDialog("Digite a matrícula do Novo Servidor:"));
         Optional<ServidorPublico> servidorEncontrado = servidorService.listByMatricula(matricula);
@@ -102,6 +103,7 @@ public class ServidorpublicoApplicationRunner implements CommandLineRunner {
 
     }
 
+    @PostConstruct
     public void update() {
         long matricula = Long.parseLong(JOptionPane.showInputDialog("Digite a matrícula do Servidor a ser Alterado:"));
         Optional<ServidorPublico> servidorEncontrado = servidorService.listByMatricula(matricula);
@@ -117,6 +119,7 @@ public class ServidorpublicoApplicationRunner implements CommandLineRunner {
 
     }
 
+    @PostConstruct
     public void delete() {
         long matricula = Long.parseLong(JOptionPane.showInputDialog("Digite a matrícula do Servidor a ser Excluído:"));
         Optional<ServidorPublico> servidorEncontrado = servidorService.listByMatricula(matricula);
