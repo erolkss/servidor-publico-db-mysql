@@ -14,6 +14,7 @@ public class ServidorPublico {
     private String orgao;
     private String vinculo;
     private String cargo;
+    private  String lotacao;
     private String exercicio;
     private String email;
     private String telefone;
@@ -24,6 +25,13 @@ public class ServidorPublico {
     public ServidorPublico() {
     }
 
+    public String getLotacao() {
+        return lotacao;
+    }
+
+    public void setLotacao(String lotacao) {
+        this.lotacao = lotacao;
+    }
     public Long getMatricula() {
         return matricula;
     }
